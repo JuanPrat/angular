@@ -1,0 +1,24 @@
+<p>directiva works!</p>
+<div *ngIf= "!cargando">
+    <p>Hola. terminó de cargar</p>
+</div>
+<div *ngIf="cargando">
+    <img  src="https://i.pinimg.com/originals/90/80/60/9080607321ab98fa3e70dd24b2513a20.gif">
+</div>
+<button (click)="mostrarCargando()">recargar Pagina</button>
+<p>integrantes del equipo null pointer</p>
+<div *ngFor = "let nombre of nombres">
+    <p>{{nombre}}</p>
+</div>
+
+<div [ngSwitch] = "pestana">
+    <button (click) = "cambiarPestana('perfil')">perfil</button>
+    <button (click) = "cambiarPestana('puntos')">puntos</button>
+    <button (click) = "cambiarPestana('info')">info</button>
+    
+    <p *ngSwitchCase = 'perfil'>Este es el perfil</p>
+    <p *ngSwitchCase = 'puntos'>Estos son los puntos</p>
+    <p *ngSwitchCase = 'info'>Esta es la info</p>
+    <p *ngSwitchDefault>Seleccione una pestaña</p>
+</div>
+
